@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<parameters>
+<param>
+<name>reference</name>
+<def>Reference of the document</def>
+<balise>F_doc_ref</balise>
+</param>
+<param>
+<name>autoValid</name>
+<def>Automatic validation of the XML modules only like -autoValid</def>
+<balise>F_autoValid</balise>
+</param>
+<param>
+<name>language</name>
+<def>Language of the document (DE,EN,FR,IT,SP)</def>
+<balise>F_doc_lang</balise>
+</param>
+<param>
+<name>edition</name>
+<def>Edition of the document</def>
+<balise>F_doc_ed</balise>
+</param>
+<param>
+<name>cn</name>
+<def>Corporate Intranet Login (CIL), like -cn "john doe"</def>
+<balise>F_cn</balise>
+</param>
+<param>
+<name>pass</name>
+<def>Pass of the user, like -pass "my_password"</def>
+<balise>F_passwd</balise>
+</param>
+<param>
+<name>gediip</name>
+<def>IP adress of GEDI server</def>
+<balise>adresseIp</balise>
+</param>
+<param>
+<name>type</name>
+<def>type of the document, it is the short name like GOP, FOP, FEX, NOTYPED (for other)</def>
+<balise>F_doc_type</balise>
+</param>
+<param>
+<name>mnemonic</name>
+<def>Mnemonic of the document</def>
+<balise>F_doc_mnemo</balise>
+</param>
+<param>
+<name>theme</name>
+<def>Theme of the document</def>
+<balise>F_doc_theme</balise>
+</param>
+<param>
+<name>client</name>
+<def>Specific client</def>
+<balise>F_specificite_id</balise>
+</param>
+<param>
+<name>title</name>
+<def>Title of the document</def>
+<balise>F_doc_titre</balise>
+</param>
+<param>
+<name>security</name>
+<def>Security level (NP,CD)</def>
+<balise>F_doc_securite</balise>
+</param>
+<param>
+<name>format</name>
+<def>Format of the document, like DCF, XML, ALICE, ACDS, WORD, OTHER </def>
+<balise>F_doc_fmt</balise>
+</param>
+<param>
+<name>summary</name>
+<def>Summary of the document</def>
+<balise>F_doc_resume</balise>
+</param>
+<param>
+<name>date</name>
+<def>Availability date (YYYY-MMM-DD) (ex:2002-dec-08)</def>
+<balise>F_dateDispo</balise>
+</param>
+<param>
+<name>reason</name>
+<def>raison of update</def>
+<balise>F_doc_raison_maj</balise>
+</param>
+<param>
+<name>codif</name>
+<def>code of the document, like ST for standard or OTHER</def>
+<balise>F_doc_codif</balise>
+</param>
+<param>
+<name>status</name>
+<def>Status of the document (IP,PD,RL,RD,RP,WD,WR)</def>
+<balise>F_doc_statut</balise>
+</param>
+<param>
+<name>statuspropnbr</name>
+<def>Proposal number, only if the tatus is PD</def>
+<balise>F_doc_statut_indice</balise>
+</param>
+<param>
+<name>dtd</name>
+<def>dtd of the XML document</def>
+<balise>F_dtd</balise>
+</param>
+</parameters>

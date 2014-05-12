@@ -1,0 +1,19 @@
+
+csh
+setenv GEDI_CMD /home/shawn/gedi/gedicmd/v04.04
+setenv GEDINIPATH /home/shawn/gedi/gedicmd/v04.04/gedi.ini
+
+./gediget 3BL48219AAAARJAGA en -cn "xinyeh" -pass "Wykss@123" -gediip gedi.fr.alcatel-lucent.com
+./gediget 3BL48219AAAARJAGA en -cn "xinyeh" -pass "Wykss@123" -gediip gedi.ln.cit.alcatel.fr
+
+http://gedi.ln.cit.alcatel.fr/gedi/
+
+
+------------------- weblib
+wget -q --no-check-certificate --http-user=xinyeh --http-passwd="Wykss@123" "https://ct.web.alcatel-lucent.com/scm-lib4/view.cgi?number=3BL48219AAAARJAGA&mode=source&source_format=pdf&no_index_sheet" --output-document="./ttt.pdf"
+
+/home/shawn/gedi/vob
+[shawn@portal003 vob]$ grep -r -i gediexportdoc tsr01_tools_sygafe/ | more
+[shawn@portal003 vob]$ grep -r -i gediinforef tsr01_tools_sygafe/ | more
+
+

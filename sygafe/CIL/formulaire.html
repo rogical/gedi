@@ -1,0 +1,181 @@
+<HTML>
+
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- 
+
+// domaine exploitation des cookies
+//var domain = ".ln.cit.alcatel.fr";
+//var domain = ".fr.alcatel-lucent.com";
+var domain = ".portal003.com";
+
+function checkEnter(e){ //e is event object passed from function invocation
+     var characterCode  //literal character code will be stored in this variable
+	 //alert(" Dans checkEnter du formulaire.html : valeur e="+e+"")
+     //        document.formulaire.statusbar.hidden();
+              if(e && e.which){ //if which property of event object is supported (NN4)
+              e = e
+              characterCode = e.which //character code is contained in NN4's which property
+              }
+              else{
+              e = event
+              characterCode = e.keyCode //character code is contained in IE's keyCode property
+              }
+
+
+              if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
+              document.formulaire.submit() //submit the form
+              return false
+              }
+              else{
+              return true
+              }
+
+}
+
+
+function setFormFocus() {
+        document.formulaire.val_Login.focus();
+				
+}
+
+//  Function DateExpiration
+//  fixe la date d'expiration
+function DateExpiration (DateExp) {
+	var aujourdhui = new Date(0);
+	var aujourdhuidate = aujourdhui.getTime();
+	if (aujourdhuidate > 0)
+	 DateExp.setTime (DateExp.getTime() - aujourdhuidate);
+
+}
+
+
+		//  Supprime un Cookie
+
+		function SupprCookie (nom) {
+
+				var date = new Date(1999,0,1);
+
+				document.cookie = nom + ";expires=" + date.toGMTString(); 
+
+				document.cookie = "Pass=" + ";expires=" + date.toGMTString(); 
+
+		}	
+
+function prepa_cookie() {
+// D�finition de la date d'expiration
+	var expdate = new Date ();
+	
+	// nouveau pour test
+	SupprCookie ();
+	//fin
+	//alert(" ds prepa_cookie du formulaire.html ligne 53 : appel DateExpiration avec expdate = "+expdate+"")
+	DateExpiration (expdate);
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 365 * 5)); // expire dans 5 ans 
+	//expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 365 * 10)); // expire dans10 ans 
+	// pour faire un cookie temporaire � une session => pas de date d'expiration
+	//alert(" ds prepa_cookie du formulaire.html ligne 57 : appel FixeCookie avec parent.location.href = "+parent.location.href+"")
+
+	FixeCookie("Login",document.formulaire.val_Login.value,"","/",domain);
+	// FixeCookie(document.formulaire.name_cook.value,document.formulaire.val_cook.value) 
+	//*****
+	//FixeCookie("PASSWD",document.formulaire.val_Pass.value,"","/",domain);
+	FixeCookie("Cip",document.formulaire.val_Pass.value,"","/",domain);
+	//*****
+}
+		
+//  Function FixeCookie
+//  pour cr�er ou modifier un cookie
+function FixeCookie (nom,valeur,expire,path,domaine,securise) {
+//alert(" Dans FixeCookie du formulaire.html : nom = "+nom+",parent.location.href ="+valeur+",expire="+expire+",path="+path+",domaine="+domaine+"")
+
+	document.cookie = nom + "=" + escape (valeur) + ( (expire) ? "; expires=" + expire.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domaine) ? "; domain=" + domaine : "") + ((securise) ? "; secure" : "");
+}
+
+// Function deconexion
+// pour "efface" le cookie USERPASS en cas de deconexion 
+function deconexion ()
+{
+
+//alert(" ds deconexion du formulaire.html ligne 81 : appel FixeCookie avec nom = USERPASS , valeur = NOK")
+
+	FixeCookie("USERPASS","NOK","","/",domain);
+//alert(" ds deconexion du formulaire.html ligne 84 : appel FixeCookie avec nom = COUNTER , valeur = OFF")
+	FixeCookie("COUNTER","OFF","","/",domain);
+	setFormFocus();
+	
+}		
+// -->
+</SCRIPT>
+</HEAD>
+
+<BODY onload="deconexion();">
+<BODY BGCOLOR="#FFFFES" BACKGROUND="../images/fond.jpg">
+
+<!--  localisation d'application d'identification CIL  -->
+<FORM NAME="formulaire" action="http://las40374.ln.cit.alcatel.fr:8282/cgi-bin/CIL/ldap_auth_mdc.pl">
+<!--FORM NAME="formulaire" action="http://webdt.fr.alcatel-lucent.com:8282/cgi-bin/CIL/ldap_auth_mdc.pl"-->
+<!-- Fin -->
+  <div align="center">
+    <p><font size="20" color="#0000FF"><b>SYGAFE</b></font></p>
+    <p><font size="5" color="#0000FF"><b>"SYST&Egrave;ME DE G&Eacute;N&Eacute;RATION 
+      D'UN CATALOGUE DE FICHES DE RECETTE"</b></font></p>
+    <p><font size="6" color="#800FF">! WELCOME !</font></p>
+    <p> 
+    </p>
+  </div>
+  <TD WIDTH="1000" BGCOLOR="FFFFFF" VALIGN=middle>
+<div align="center"></div>
+  </TD>
+
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100%" height="55%">
+ <TR>
+      <TD align="center"> 
+        <table border="1" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td> 
+              <table border=0 cellspacing=0 cellpadding=0>
+                <tr valign=top> 
+                  <td width="144" bgcolor="FFFFFF" valign=middle><img src="../images/alogo1.gif" width=144 height=66></td>
+                  <td width="378" bgcolor="FFFFFF" valign=middle><b><font size=6>Server 
+                    Login</font></b><br>
+                    Please enter your Intranet Corporate Login (CIL) or Login 
+                    (CSL) <br>
+                    and Password</td>
+                </tr>
+                <tr valign=top> 
+                  <td width="144" bgcolor="FFFFFF" valign=middle>
+                    <div align=center>Username<font size=4></font></div>
+                  </td>
+                  <td width="378" bgcolor="FFFFFF" valign=middle>
+                    <input type=TEXT name="val_Login" maxlength=256>
+                  </td>
+                </tr>
+                <tr valign=top> 
+                  <td width="144" bgcolor="FFFFFF" valign=middle>
+                    <div align=center>Password<font size=4></font></div>
+                  </td>
+                  <td width="378" bgcolor="FFFFFF" valign=middle>
+                    <input name="val_Pass" value="" type=password maxlength=256 onKeyPress="checkEnter(event)">
+                    <font size=4></font></td>
+                </tr>
+                <tr valign=top> 
+                  <td width="144" bgcolor="FFFFFF" valign=middle><font size=4></font></td>
+                  <td width="378" bgcolor="FFFFFF" valign=middle>
+                    <input type=submit value="Login" onClick="prepa_cookie();" name="submit">
+
+                    <font size=4></font></td>
+					
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </TD>
+ </TR>
+
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

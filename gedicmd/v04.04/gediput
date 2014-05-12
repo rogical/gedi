@@ -1,0 +1,17 @@
+#!/bin/sh
+java_home=/agl/tools/jdk13
+export JAVA_HOME
+if test -z "$GEDI_CMD"
+then
+	echo "Environment variable GEDI_CMD not set."
+        echo "This environment variable define where is gedicmd, for exemple /agl/tools/utils/gedicmd/current"
+	exit 1
+fi
+if test -z "$GEDINIPATH"
+then
+        echo "Environment variable GEDINIPATH not set."
+        echo "This environment variable define where is your gedi.ini"
+        exit 1
+fi
+$java_home/bin/java -classpath "$java_home/jre/lib/rt.jar:${GEDI_CMD}/lib/jdom.jar:${GEDI_CMD}/lib/crimson.jar:${GEDI_CMD}/lib/saxon.jar:${GEDI_CMD}/lib/saxon-fop.jar:${GEDI_CMD}/lib/saxon-jdom.jar:${GEDI_CMD}/lib/xalan.jar:${GEDI_CMD}/lib/HTTPClient.jar:${GEDI_CMD}/GediPut.jar" com/_4dconcept/gedi/lc/GediPut ${GEDINIPATH} "$@"
+exit $?

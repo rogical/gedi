@@ -1,0 +1,17 @@
+#!/bin/sh
+java_home=/usr/java1.2
+export JAVA_HOME
+if test -z "$GEDI_CMD"
+then
+	echo "Environment variable GEDI_CMD not set."
+        echo "This environment variable define where is gedicmd, for exemple /agl/tools/utils/gedicmd/current"
+	exit 1
+fi
+if test -z "$GEDINIPATH"
+then
+        echo "Environment variable GEDINIPATH not set."
+        echo "This environment variable define where is your gedi.ini"
+        exit 1
+fi
+$java_home/bin/java -classpath "$java_home/jre/lib/rt.jar" -jar $GEDI_CMD/GediGetGraphic.jar $GEDINIPATH "$@"
+exit $?

@@ -1,0 +1,79 @@
+					INSTALLATION DE SYGAFE 2.06
+
+1. Prérequis
+
+- serveur Apache
+- PHP 4
+- système d'exploitation Solaris
+- commandes zip et unzip pour Solaris accessibles depuis le serveur web
+- mode commande de GEDI pour Solaris configuré
+
+
+2. Installation
+
+	1) Faire un gunzip de l'archive sygafe_02.05.tar.gz
+	2) Faire un tar -xpvf de l'archive sygafe_02.05.tar
+	
+	Contenu du répertoire sygafe : 
+		-> readme
+		-> version
+		-> About.htm
+		-> A_propos.htm
+		-> index.html
+		-> sygMain.php
+		-> MANUEL_UTILISATION.pdf
+		-> USER_MANUAL.pdf
+		
+		-> CIL:
+			-> formulaire.html
+			-> index.html
+			-> module.js
+			-> popup.html
+			
+		-> classes:
+			-> sygFileCrClasses.php
+			-> sygListProClasses.php
+		
+		-> common:
+			-> sygCommon.php
+			-> sygConfig.php
+		
+		-> images:
+			-> ambulance1.jpg
+			-> fond.jpg
+			-> help.jpg
+			-> help1.jpg
+			-> alogo1.gif
+			-> mail.jpg
+			-> paper.gif
+			-> timer.jpg
+			-> English.png
+			-> Francais.png
+		
+		-> step1:
+			-> fonctionsStep1.php
+			-> sygMainStep1.php
+			-> sygReadFileP.php
+		
+		-> step2:
+			-> fonctionsStep2.php
+			-> sygDownload.php
+			-> sygMainStep2.php
+			-> sygReadFileCr.php
+	
+	3) Configurer le serveur web de telle sorte que lorsque l'url de SYGAFE est appelée,
+	une redirection soit réalisée vers le fichier index.html.
+	
+	4) A la première exécution vérifier que SYGAFE y a bien créé le répertoire sygTemp dans le quel il y a le fichier lastReset.syg
+	et le répertoire de stockage des données utilisateurs.
+	
+	5) Configurer les variables d'environnement PHP du fichier common/sygConfig.php selon de :
+		- $urlSygafe => pour l'adresse de lancement du SYGAFE
+		- $urlRacineSyg => pour l'adresse url du location de SYGAFE
+		- $racineSyg => pour location du SYGAFE sur le disque serveur
+	
+	
+	6) Configurer les variables utilisees par l'aplication de authorisation (CIL) , les fichiers
+	formulaire.html et module.js avec les bonnes adresses.
+	
+	
