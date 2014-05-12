@@ -1,0 +1,7 @@
+gedi-new put all new gedi commands here
+
+gedicmd  old gedi commands
+
+sygafe   a php utility calls gedi commands
+
+weblib   new gedi commands will need to call weblib than gedi server
