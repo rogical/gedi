@@ -1,2 +1,17 @@
 #!/bin/bash
-
+php_path=php
+if test -z "$GEDI_CMD"
+then
+	echo "Environment variable GEDI_CMD not set."
+	echo "This environment variable define where is gedicmd, for exemple /ag
+l/tools/utils/gedicmd/current"
+	exit 1
+fi
+if test -z "$GEDINIPATH"
+then 
+	echo "Environment variable GEDINIPATH not set."
+        echo "This environment variable define where is your gedi.ini"
+        exit 1
+fi
+$php_path $GEDI_CMD/ParseParameters.php $GEDINIPATH gediget.php "$@"
+exit $?
