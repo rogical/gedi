@@ -1,0 +1,26 @@
+"gediget ".$ref_fr." ".$lgue." $identificationCIl > $racineSygTemp$nameSygTemp/$repUtil/step2/ficheRes"
+
+$identificationCIl = "-cn $login_user -pass $motdepasse"; 
+system("gediget ".$referenceC." ".$langueC." $identificationCIl  -extract  -nosrc > $cale.$cale1", $resltCE);
+
+system("gediput $cale  $identificationCIl -type CAB > $cale.$cale2", $resltCC); 
+
+$identificationCIl = "-cn $login_user -pass $motdepasse";
+system("gediget ".$fr->ref." ".$fr->lgue." ".$fr->ed." $identificationCIl -pdf > $res", $res);
+
+echo("<TR BGCOLOR=\"$color\"> <TD><A HREF=\"JavaScript:parent.contenuCR.lireFiche()\" onClick=\"window.open('http://gedi.ln.cit.alcatel.fr/surespeed/gedi/S_docLink?F_scope=publi?&F_reference=$uneFr->ref','new','width=800,height=500,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes')\">$uneFr->ref</A></TD><TD><font color = $font>$uneFr->nom</TD><TD><font color = $font><CENTER>$uneFr->cr1</CENTER></TD><TD><font color = $font><CENTER>$uneFr->cr2</CENTER></font></TD></TR>\n");
+
+echo("<TR BGCOLOR=\"AAAAAA\"><TD><P><H4><INPUT TYPE=\"hidden\" NAME=\"vide\" ></TD><TD><A HREF=\"JavaScript:parent.contenuCR.lireFiche()\" onClick=\"window.open('http://delta1.ln.cit.alcatel.fr/DELTA/FILES/IMGFILES1/$uneFr->tdr.PDF','new','width=800,height=500,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes')\">$uneFr->tdrmod</A></TD><TD>$uneFr->ndr</TD></TR>\n");
+
+$identificationCIl = "";
+system("gediget ".$reference." ".$lgue." $identificationCIl -save $filename", $resCde);
+
+system("gediget ".$reference." ".$lgue." $identificationCIl -save $filename > $racineSygTemp$nameSygTemp/resCdes", $resCde);
+
+fwrite($file_ini, "GEDI_IP=gedi.ln.cit.alcatel.fr\n");
+
+if (!$fic = fopen ("$racineSygTemp$nameSygTemp/$csl/gedi.ini" , "r")) {
+ die("Impossible de lire le fichier gedi.ini : fichier inexistant");
+}
+
+
