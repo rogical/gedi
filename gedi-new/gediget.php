@@ -1,2 +1,2 @@
 <?php
-echo 'test';
+print_r($parameters);
