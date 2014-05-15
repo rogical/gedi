@@ -28,7 +28,7 @@ Class ParseXML{
      * @access public
      */
 	function __construct(){
-		$xml = simplexml_load_file("../configparam.xml");
+		$xml = simplexml_load_file(dirname(dirname(__FILE__))."/configparam.xml");
 		$res = $xml->xpath("param");
 
 		$this->xml_array = array();

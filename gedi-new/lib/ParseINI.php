@@ -44,7 +44,7 @@ Class ParseINI{
      * @access public
      */
     function __construct(){
-	    $this->ini_array = parse_ini_file("../gedi.ini");
+	    $this->ini_array = parse_ini_file(dirname(dirname(__FILE__))."/gedi.ini");
 	    if($this->ini_array){
 			$this->mapping_ini['-gediip'] = $this->ini_array['GEDI_IP'];
 			$this->mapping_ini['-cn'] = $this->ini_array['CN'];
