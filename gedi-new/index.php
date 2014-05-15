@@ -27,16 +27,16 @@ foreach($argv as $k=>$arg){
 
 $parseINIObj = new ParseINI();
 //check ip
-if(!in_array('-gediip',$parameters)){
+if(!key_exists('-gediip',$parameters)){
 	//get gedi ip from gedi.ini
 	$parameters['-gediip'] = $parseINIObj->get('-gediip');
 }
 //check username
-if(!in_array('-cn',$parameters)){
+if(!key_exists('-cn',$parameters)){
 	$parameters['-cn'] = $parseINIObj->get('-cn');
 }
 //check pass
-if(!in_array('-pass',$parameters)){
+if(!key_exists('-pass',$parameters)){
 	$parameters['-pass'] = $parseINIObj->get('-pass');
 }
 
