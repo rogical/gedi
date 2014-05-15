@@ -1,5 +1,8 @@
 /**
  * Record known api 
  */
+setenv GEDI_CMD /home/shawn/gedi-migration/gedicmd/v04.04
+setenv GEDINIPATH /home/shawn/gedi-migration/gedicmd/v04.04
+
 
 
