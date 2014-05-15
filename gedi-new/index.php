@@ -8,8 +8,11 @@ $parameters['file'] = $argv[3];
 //language
 $parameters['language'] = $argv[4];
 //edition
-if(substr($argv[5],0,1) !== '-')
-	$parameters['edition'] = $argv[5];
+//edition
+if(!empty($argv[5])){
+	if(substr($argv[5],0,1) !== '-')
+		$parameters['edition'] = $argv[5];
+}
 	
 foreach($argv as $k=>$arg){
 	if(substr($arg,0,1) == '-'){
