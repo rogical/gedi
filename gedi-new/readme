@@ -1,1 +1,8 @@
 Put all new gedi commands here.
+
+Eg /home/shawn/gedi-migration
+  setenv GEDI_CMD /home/shawn/gedi-migration/gedi-new
+  setevn GEDINIPATH /home/shawn/gedi-migration/gedi-new
+
+Usage: gediget
+  ./gediget a.txt fr -cn aaabc -pass 1433 -title
