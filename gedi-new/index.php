@@ -22,19 +22,19 @@ foreach($argv as $k=>$arg){
 	}
 }
 
-$parseObj = new ParseINI();
+$parseINIObj = new ParseINI();
 //check ip
 if(!in_array('-gediip',$parameters)){
 	//get gedi ip from gedi.ini
-	$parameters['-gediip'] = $parseObj->get('-gediip');
+	$parameters['-gediip'] = $parseINIObj->get('-gediip');
 }
 //check username
 if(!in_array('-cn',$parameters)){
-	$parameters['-cn'] = $parseObj->get('-cn');
+	$parameters['-cn'] = $parseINIObj->get('-cn');
 }
 //check pass
 if(!in_array('-pass',$parameters)){
-	$parameters['-pass'] = $parseObj->get('-pass');
+	$parameters['-pass'] = $parseINIObj->get('-pass');
 }
 
 //use php file to request api
