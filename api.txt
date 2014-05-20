@@ -4,5 +4,15 @@
 setenv GEDI_CMD /home/shawn/gedi-migration/gedicmd/v04.04
 setenv GEDINIPATH /home/shawn/gedi-migration/gedicmd/v04.04
 
+Command:
+  ./gediget 3BL48219AAAARJAGA en -cn "xinyeh" -pass "Wykss@123" -gediip gedi.ln.cit.alcatel.fr
+Return: 
+  3BL48219AAAARJAGA_06_EN.xzip
+
+Command:
+  ./gediget 3BL48219AAAARJAGA en -cn "xinyeh" -pass "Wykss@123" -gediip gedi.ln.cit.alcatel.fr -pdf
+Return:
+  3BL48219AAAARJAGA_06_EN.pdf
+
 
 
