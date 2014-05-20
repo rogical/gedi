@@ -14,5 +14,8 @@ Command:
 Return:
   3BL48219AAAARJAGA_06_EN.pdf
 
-
+Command:
+   ./gediget 3BL48219AAAARJAGA en -cn "xinyeh" -pass "Wykss@123" -gediip gedi.ln.cit.alcatel.fr -save TEST.xzip
+Return:
+  TEST.xzip
 
