@@ -13,5 +13,5 @@ then
         echo "This environment variable define where is your gedi.ini"
         exit 1
 fi
-$php_path $GEDI_CMD/index.php $GEDINIPATH gediget.php "$@"
+$php_path $GEDI_CMD/gediget.php $GEDINIPATH gedigetapi.php "$@"
 exit $?
