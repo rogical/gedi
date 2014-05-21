@@ -22,13 +22,13 @@ if(!empty($argv[5])){
 $userInfo = array('-gediip','-cn','-pass');
 foreach($argv as $k=>$arg){
 	if(in_array($arg,$userInfo)){
-		if(isset($argv[$k+1]) && !in_array($argv[$k+1],$userInfo)){
+		if(isset($argv[$k+1]) && !@in_array($argv[$k+1],$userInfo)){
 			$parameters[$arg] = $argv[$k+1];
 		}else{
 			$parameters[$arg] = '';
 		}
 	}else{
-		if(!in_array($argv[$k-1],$userInfo)){
+		if(!@in_array($argv[$k-1],$userInfo)){
 			$parameters[$arg] = $arg;
 		}
 	}
