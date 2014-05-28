@@ -19,7 +19,7 @@ if(!empty($argv[5])){
 		unset($argv[5]);
 	}
 }
-$userInfo = array('-gediip','-cn','-pass');
+$userInfo = array('-gediip','-cn','-pass','-save');
 foreach($argv as $k=>$arg){
 	if(in_array($arg,$userInfo)){
 		if(isset($argv[$k+1]) && !@in_array($argv[$k+1],$userInfo)){
