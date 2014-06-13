@@ -94,6 +94,6 @@ if(!array_key_exists('-pass',$parameters)){
 	$parameters['-pass'] = $parseINIObj->get('-pass');
 }
 //print_r($parameters);
-
+//die;
 //do other options
 require_once $gediPath.'/'.$phpFile;

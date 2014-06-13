@@ -1,6 +1,25 @@
 <?php
     /****************************************************************
-	*eg
+	/**
+	 * Gedi PUT command
+	 *
+	 * This scipt represents an  Gedi PUT command
+	 * @author Patrick WU
+	 * @package gedi
+	 * @version 1.0
+	 * Array
+	 * 	(
+	 *      [file] => a
+	 * 		[language] => fr
+	 * 		[edition] => 20
+	 *      [-save] => test.pdf
+	 * 		[-cn] => aaabc
+	 * 		[-pass] => 1433
+	 * 		[-title] => -title
+	 * 		[-gediip] => gedi.ln.cit.alcatel.fr
+	 * 
+	 * 	)
+	 * For example
 	./gediput /home/patrick/gedi/gedi-new/tmp/test.html -reference '3FQ-40013-ABAA-PCZZA' -language FR -edition 04 -title 'test1234562' -summary 'test' -security NP -type M/TOOLS -status IP -reason 'test12341' -theme 'zzz' -format 'html' -status 'IP' -client '38' -date 2003-may-15
 	*****************************************************************/
 	//weblib api
@@ -41,7 +60,12 @@
 	if(isset( $parameters['-client']) && $parameters['-client']){
 		$domain = $parameters['-client'];
 	}
+	if(isset( $parameters['-client']) && $parameters['-client']){
+		$domain = $parameters['-client'];
+	}
 	$mode = "enter";
+	//$mode ="checkin";
+
 
 //    $user = "xinyeh";
 //	$passwd = "Wykss@123";

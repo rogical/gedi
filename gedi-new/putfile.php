@@ -1,25 +1,26 @@
 <?php
     $user = "xinyeh";
 	$passwd = "Wykss@123";
-	$createFile = "/home/patrick/gedi/gedi-new/tmp/test.html";
+	$createFile = "/home/patrick/gedi/gedi-new/tmp/test12.doc";
 
-	$outputfile = "/home/patrick/gedi/gedi-new/tmp/20140526.html";
+	$outputfile = "/home/patrick/gedi/gedi-new/tmp/test122.txt";
 
-	$category = "M/TOOLS";
+	$category = "MY/SETUP";
 
-	$mode = "enter";
+	//$mode = "enter";
+	$mode="checkin";
 
-	$title = "test1234562";
+	$title = "test1234565";
 
-	$format="html";
+	$format="doc";
 
-	$docNbrVersion= "3FQ-40013-ABAA-PCZZA-04";
+	$docNbrVersion= "8DM-43347-1115-DDZZA-01";
 
 	$status = "IP";
 
-	$domain="38";
+	$domain="";
 
-	$comments= "test12341";
+	$comments= "test123411";
 
 
     $info  = "category=" . $category;
@@ -45,7 +46,5 @@
 	$cmd = "/usr/bin/wget -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$url\" --output-document=\"$outputfile\"";
 
     $opt = @shell_exec("$cmd");
-	echo "<pre>";
-	var_dump($opt);
-	echo "</pre>";
+
 ?>
