@@ -46,7 +46,7 @@ if(isset( $parameters['language']) && $parameters['language']){
 }
 // add logic of get the default file extension
 
-$ret = array
+$ret = array();
 if(isset($parameters['-pdf']) && $parameters['-pdf']){
 	$format = "pdf";
 } else {
