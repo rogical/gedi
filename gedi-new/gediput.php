@@ -11,8 +11,13 @@ $parameters['file'] = isset($argv[3])?$argv[3]:'';
 unset($argv[3]);
 
 foreach($argv as $k=>$arg){
-	if(substr($arg,0,1) == '-'){
-		$parameters[$arg] = @$argv[$k+1];
+	if(substr($arg,0,1) == '-' ){
+		if(isset($argv[$k+1]) && substr($argv[$k+1],0,1) != '-'){
+			$parameters[$arg] = @$argv[$k+1];
+		}else{
+			$parameters[$arg] = '';
+		}
+		
 	}
 	
 }
