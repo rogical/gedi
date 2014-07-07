@@ -1,8 +1,16 @@
 Put all new gedi commands here.
 
-Eg /home/shawn/gedi-migration
-  setenv GEDI_CMD /home/shawn/gedi-migration/gedi-new
-  setevn GEDINIPATH /home/shawn/gedi-migration/gedi-new
+Eg csh
+    setenv GEDI_CMD /home/patrick/gedi/gedi-new
+    setenv GEDINIPATH /home/patrick/gedi/gedi-new
+
 
 Usage: gediget
-  ./gediget a.txt fr -cn aaabc -pass 1433 -title
+ * For example
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 -pdf 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 -save test.pptx 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 -pdf -save test.pdf 
+ 
+Usage: gediput
+./gediput /home/patrick/gedi/gedi-new/tmp/test.html -reference '8DM-43347-6100-DDZZA' -language FR -edition 01 -title 'test1234562' -summary 'test6100' -security 'NP' -type 'M/TOOLS' -status -reason 'test12341' -theme 'zzz' -format 'html' -client '38' -date '2003-may-15'

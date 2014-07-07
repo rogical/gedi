@@ -18,8 +18,10 @@
  * 
  * 	)
  * For example
- *./gediget 3FQ-40013-ABAA-TQZZA fr -pdf
- *./gediget 3FQ-40013-ABAA-TQZZA fr 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 -pdf 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 -save test.pptx 
+ * ./gediget 3FQ-40013-ABAA-TQZZA fr -cn xinyeh -pass Wykss@123 -pdf -save test.pdf 
  */
 require_once(dirname(__FILE__).'/constants.inc.php');
 
@@ -41,35 +43,37 @@ if(isset( $parameters['file']) && $parameters['file']){
 if(isset( $parameters['edition']) && $parameters['edition']){
 	$number.="-".$parameters['edition'];
 }
+
+$ret = array();
+if($number){
+	$ret = get_file_format_edition(WGET_PATH,$user,$passwd,$number,showEntryInWeblibURL);
+}
+
+$lang = "";
 if(isset( $parameters['language']) && $parameters['language']){
 	$lang = $parameters['language'];
 }
-// add logic of get the default file extension
 
-$ret = array();
+// add logic of get the default file extension
 if(isset($parameters['-pdf']) && $parameters['-pdf']){
 	$format = "pdf";
 } else {
-	$ret = get_file_format_edition(WGET_PATH,$user,$passwd,$number,showEntryInWeblibURL);
-	$format = $ret['format'];
+	$format = $ret['Format'];
 }
-
-//@unlink($tmpFile);
 
 if(isset($parameters['-save']) && $parameters['-save']){
 	$tmpFile = $parameters['-save'];
 }else {
 	if(isset( $parameters['file']) && $parameters['file']){
-		$tmpFile = dirname(__FILE__).'/tmp/'.$parameters['file'];
+		$tmpFile = dirname(__FILE__).'/'.$parameters['file'];
 	}
 	if(isset( $parameters['edition']) && $parameters['edition']){
 		$tmpFile.="_".$parameters['edition'];
 	}else{
-		$ret = get_file_format_edition(WGET_PATH,$user,$passwd,$number,showEntryInWeblibURL);
-		$tmpFile.="_".$ret['edition'];
+		$tmpFile.="_".$ret['DocVersion'];
 	}
-	if(isset( $parameters['language']) && $parameters['language']){
-		$tmpFile.="_".strtoupper($parameters['language']);
+	if($lang){
+		$tmpFile.="_".strtoupper($lang);
 	}
 	$tmpFile.=".".$format;
 	
@@ -77,8 +81,6 @@ if(isset($parameters['-save']) && $parameters['-save']){
 
 $viewDocInWeblibURL = viewDocInWeblibURL;
 $cmd = WGET_PATH." -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$viewDocInWeblibURL?number=$number&mode=source&source_format=$format&no_index_sheet\" --output-document=\"$tmpFile\"";
-
-//$cmd = "$wget -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$viewDocInWeblibURL?number=$number&mode=source&no_index_sheet\" --output-document=\"$tmpFile\"";
 
 @system($cmd, $rc);
 
@@ -101,23 +103,55 @@ if ($rc == "0") {
 	echo("Errorcode $rc received when downloading your document <a href=\"$viewDocInWeblibURL?number=$number\" style=\"color: rgb(0, 0, 255);\">$number</a>..."); 
 } 
 
+/**********************************************************
+@parameter  
+   $number  DOCnumber
+@response  array()
+	array(14) {
+	  ["DocNbr"]=>
+	  string(20) "3FQ-40013-ABAA-TQZZA"
+	  ["DocVersion"]=>
+	  string(2) "19"
+	  ["Status"]=>
+	  string(2) "RL"
+	  ["Title"]=>
+	  string(31) "Document Management with Weblib"
+	  ["Author"]=>
+	  string(13) "johnnyreusens"
+	  ["ACL"]=>
+	  string(0) ""
+	  ["Format"]=>
+	  string(4) "pptx"
+	  ["Product"]=>
+	  string(1) "M"
+	  ["Category"]=>
+	  string(5) "TOOLS"
+	  ["ProjectBuild"]=>
+	  string(0) ""
+	  ["Feature"]=>
+	  string(0) ""
+	  ["Keywords"]=>
+	  string(6) "WEBLIB"
+	  ["TimeStamp"]=>
+	  string(12) "130726 08:58"
+	  ["Size"]=>
+	  string(7) "5066336"
+	}
+**************************************************************/
 function get_file_format_edition($path,$user,$passwd,$number,$api){
-	$ret= array();
-	$ret['format'] = "";
-	$ret['edition'] = "";
 	$tmpFile = tempnam (dirname(__FILE__).'/tmp/', "theRequesteContent");
 	$cmd = $path." -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$api&number=$number\" --output-document=\"$tmpFile\"";
 	@system($cmd, $rc);
 	$content =  file_get_contents($tmpFile);
-	preg_match_all("/<br>Format: <span style=\"(.*?)\">(.*?)<\/span>&nbsp;&nbsp;Category/", $content, $matches, PREG_SET_ORDER);
-	preg_match_all("/<span class=\"button1\" style=\"font-size: 11px;\">(.*?)<\/span>/", $content, $matches2, PREG_SET_ORDER);
+	preg_match_all("/<tr><th>(.*?)<\/th><td>(.*?)<\/td><\/tr>/", $content, $matches, PREG_SET_ORDER);
 	@unlink($tmpFile);
-    if($matches){
-		$ret['format']=$matches[0][2];
+	$attribute = array();
+	if($matches){
+		foreach($matches as $key=>$val){
+			$attribute[$val[1]] = $val[2];
+		}
 	}
-	if($matches2){
-		$ret['edition']=$matches2[0][1];
-	}
-	return $ret;
+	return $attribute;
 	
 }
+//---------------------------------------------------------------

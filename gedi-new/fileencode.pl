@@ -9,7 +9,8 @@ for ($n=0; $n<(@ARGV+0);$n++)
 
   if (-f $name)
    {
-      $rawfile="/tmp/$name";
+	  @file_arr=split(/\//,$name);  
+      $rawfile="/tmp/$file_arr[-1]";
 
       open(IN, $name);
       open (OUT,">$rawfile");
@@ -21,7 +22,7 @@ for ($n=0; $n<(@ARGV+0);$n++)
       ## URLENCODE from http://support.internetconnection.net/CODE_LIBRARY/Perl_URL_Encode_and_Decode.shtml
       $RAW =~ s/([^A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg;
 
-      print OUT "name=$name&size=$size&type=binary/octet-stream&host=$host&file=";
+      print OUT "name=$rawfile&size=$size&type=binary/octet-stream&host=$host&file=";
       print OUT $RAW;
 
      close OUT;

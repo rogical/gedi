@@ -20,8 +20,9 @@
 	 * 
 	 * 	)
 	 * For example
-	./gediput /home/patrick/gedi/gedi-new/tmp/test.html -reference '3FQ-40013-ABAA-PCZZA' -language FR -edition 04 -title 'test1234562' -summary 'test' -security NP -type M/TOOLS -status IP -reason 'test12341' -theme 'zzz' -format 'html' -status 'IP' -client '38' -date 2003-may-15
+	./gediput /home/patrick/gedi/gedi-new/tmp/test.html -reference '8DM-43347-6100-DDZZA' -language FR -edition 01 -title 'test1234562' -summary 'test6100' -security 'NP' -type 'M/TOOLS' -status 'IP' -reason 'test12341' -theme 'zzz' -format 'html' -client '38' -date '2003-may-15'
 	*****************************************************************/
+	require_once(dirname(__FILE__).'/constants.inc.php');
 	//weblib api
 	$outputfile = tempnam (dirname(__FILE__).'/tmp/', "theRequesteContent"); 
 
@@ -45,6 +46,7 @@
 	if(isset( $parameters['-type']) && $parameters['-type']){
 		$category = $parameters['-type'];
 	}
+	$status = "";
 	if(isset( $parameters['-status']) && $parameters['-status']){
 		$status = $parameters['-status'];
 	}
@@ -54,42 +56,19 @@
 	if(isset( $parameters['-title']) && $parameters['-title']){
 		$title = $parameters['-title'];
 	}
+	$comments = "";
 	if(isset( $parameters['-reason']) && $parameters['-reason']){
 		$comments = $parameters['-reason'];
 	}
-	if(isset( $parameters['-client']) && $parameters['-client']){
-		$domain = $parameters['-client'];
-	}
+	$domain = "";
 	if(isset( $parameters['-client']) && $parameters['-client']){
 		$domain = $parameters['-client'];
 	}
 	$mode = "enter";
 	//$mode ="checkin";
-
-
-//    $user = "xinyeh";
-//	$passwd = "Wykss@123";
-//	$createFile = "/home/patrick/gedi/gedi-new/tmp/test.html";
-
-//	$outputfile = "/home/patrick/gedi/gedi-new/tmp/20140526.html";
-
-//	$category = "M/TOOLS";
-
-
-
-//	$title = "test1234562";
-
-//	$format="html";
-
-//	$docNbrVersion= "3FQ-40013-ABAA-PCZZA-04";
-
-	//$status = "IP";
-
-	//$domain="38";
-
-	//$comments= "test12341";
-
-
+	system(PERL_PATH.' fileencode.pl '.$createFile);
+	$file_name = explode("/",$createFile);
+	$real_file = "/tmp/". end($file_name);
     $info  = "category=" . $category;
     $info .= "&mode=$mode";
     $info .= "&title=$title";
@@ -100,16 +79,15 @@
     $info .= "&domain=$domain";
     $info .= "&cnnr=";
     $info .= "&comments=$comments";
-    $info .= "&filename=$createFile";
+    $info .= "&filename=$real_file";
     $info .= "&projectbuild=";
     $info .= "&feat=";
     $info .= "&allfiles=no";
+	$info .= '&enctype=multipart/form-data';
 
     $info = str_replace(" ", "%20", $info);
-    $url = "https://ct.web.alcatel-lucent.com/scm-lib4/create-entry-API.cgi?$info";
-    //$cmd = "$wget -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$url\" --output-document=\"$outputfile\"";
-    //echo $url;
-    //echo "<br>";
-	$cmd = "/usr/bin/wget -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$url\" --output-document=\"$outputfile\"";
-
+	$url = uploadFileWeblib."?$info";
+	$cmd = WGET_PATH." -q --no-check-certificate --http-user=\"$user\" --http-passwd=\"$passwd\" \"$url\" --output-document=\"$outputfile\"";
+	echo $cmd;
     $opt = @shell_exec("$cmd");
+	@unlink($real_file);

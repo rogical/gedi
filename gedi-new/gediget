@@ -1,4 +1,16 @@
 #!/bin/bash
+
+b=''
+for ((i=0;$i<=10;i+=2))
+do
+    printf "%s" $b
+    sleep 0.1
+    
+    b=.$b
+done
+echo "please waiting..."
+
+
 php_path=php
 if test -z "$GEDI_CMD"
 then
