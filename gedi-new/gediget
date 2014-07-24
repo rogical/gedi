@@ -1,15 +1,15 @@
-#!/bin/bash
+#!/bin/csh
 
-b=''
-for ((i=0;$i<=10;i+=2))
+set b=''
+set i =1
+while ( $j <= 10 )
 do
     printf "%s" $b
     sleep 0.1
-    
     b=.$b
-done
+    @ j++
+end
 echo "please waiting..."
-
 
 php_path=php
 if test -z "$GEDI_CMD"
