@@ -1,12 +1,11 @@
 #!/bin/csh
 
 set b=''
-set i =1
+set j = 1
 while ( $j <= 10 )
-do
     printf "%s" $b
     sleep 0.1
-    b=.$b
+    $b=.$b
     @ j++
 end
 echo "please waiting..."
