@@ -2,27 +2,31 @@
 
 set b=''
 set j = 1
+
 while ( $j <= 10 )
     printf "%s" $b
     sleep 0.1
-    $b=.$b
+    set b = "."$b
     @ j++
 end
 echo "please waiting..."
 
-php_path=php
-if test -z "$GEDI_CMD"
-then
+set php_path = '/usr/bin/php'
+
+if ($?GEDI_CMD) then
+else
 	echo "Environment variable GEDI_CMD not set."
-	echo "This environment variable define where is gedicmd, for exemple /ag
-l/tools/utils/gedicmd/current"
+	echo "This environment variable define where is gedicmd, for exemple /agl/tools/utils/gedicmd/current"
 	exit 1
-fi
-if test -z "$GEDINIPATH"
-then 
+endif
+
+if ($?GEDINIPATH) then
+else
 	echo "Environment variable GEDINIPATH not set."
-        echo "This environment variable define where is your gedi.ini"
-        exit 1
-fi
-$php_path $GEDI_CMD/gediget.php $GEDINIPATH gedigetapi.php "$@"
+    echo "This environment variable define where is your gedi.ini"
+    exit 1
+endif 
+#echo $php_path "$GEDI_CMD/gediget.php $GEDINIPATH gedigetapi.php"
+
+$php_path "$GEDI_CMD/gediget.php $GEDINIPATH gedigetapi.php" "$@"
 exit $?
