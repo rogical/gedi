@@ -1,1 +1,375 @@
-1111111111
+<!-- Layout -->
+<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#ffffff; width:100%;">
+  <tbody>
+    <tr>
+      <!-- Page -->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:600px; width:600px; border: 1px solid #cccccc; font-size:14px; border-collapse:collapse;" width="600" bgcolor="#ffffff">
+        <tbody>
+          <tr>
+            <td>
+              <!-- Banner -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#0F68A4">
+                <tbody>
+                  <tr>
+                    <td><img src="./edm/col-572_header.png" style="width:100%; height:auto; display:block;" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Title -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+                <tbody>
+                  <tr>
+                    <td width="20"></td>
+                    <td height="20"></td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td width="20"></td>
+                    <td>
+                      <span style="font-family:Arial; font-size:30px; line-height:120%;">
+                        <b>Homepage Moderate</b>
+                      </span>
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td width="20"></td>
+                    <td height="25"></td>
+                    <td width="20"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Panel -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+                <tbody>
+                  <tr>
+                    <td width="20"></td>
+                    <td>
+
+                      <!-- Panel Title -->
+                      <table align="left" border="1" bordercolor="#e6e6e6" cellpadding="0" cellspacing="0" width="560" bgcolor="#f6f6f6" style="border-collapse:collapse;">
+                        <tbody>
+                          <tr>
+                            <td>
+                            <table align="left" border="0" bordercolor="#f6f6f6" cellpadding="0" cellspacing="0" width="560" bgcolor="#f6f6f6">
+                              <tbody>
+                                <tr>
+                                  <td width="10"></td>
+                                  <td height="10"></td>
+                                  <td width="10"></td>
+                                </tr>
+                                <tr>
+                                  <td width="10"></td>
+                                  <td>
+                                    <span style="font-family:Arial; font-size:16px; line-height:120%"><b>Approve list:</b></span>
+                                  </td>
+                                  <td width="10"></td>
+                                </tr>
+                                <tr>
+                                  <td width="10"></td>
+                                  <td height="10"></td>
+                                  <td width="10"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!-- Panel Content -->
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                        <tbody>
+                          <tr>
+                            <td width="10"></td>
+                            <td height="10"></td>
+                            <td width="10"></td>
+                          </tr>
+                          <tr>
+                            <td width="10"></td>
+                            <td>
+                              <table align="left" border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                <tbody>
+                                  <tr>
+                                    <td><font color="green"><b>√</b></font></td>
+                                    <td><font size="2" color="#696969">xxx: approved.</font></td>
+                                  </tr>
+                                  <tr>
+                                    <td><font color="red"><b>×</b></font></td>
+                                    <td><font size="2" color="#696969">xxx: rejected, the color doesn't follow DDL.</font></td>
+                                  </tr>
+                                  <tr>
+                                    <td><font><b>?</b></font></td>
+                                    <td><font size="2" color="#696969">xxx: approved.</font></td>
+                                  </tr>
+                                  <tr>
+                                    <td><font><b>?</b></font></td>
+                                    <td><font size="2" color="#696969">xxx: approved.</font></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                            <td width="10"></td>
+                          </tr>
+                          <tr>
+                            <td width="10"></td>
+                            <td height="20"></td>
+                            <td width="10"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td width="20"></td>
+                    <td>
+
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td width="20"></td>
+                    <td height="20"></td>
+                    <td width="20"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Panel -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+                <tbody>
+                  <tr>
+                    <td width="20"></td>
+                    <td>
+
+                      <!-- Panel Title -->
+                      <table align="left" border="1" bordercolor="#e6e6e6" cellpadding="0" cellspacing="0" width="560" bgcolor="#f6f6f6" style="border-collapse:collapse;">
+                        <tbody>
+                          <tr>
+                            <td>
+                            <table align="left" border="0" bordercolor="#f6f6f6" cellpadding="0" cellspacing="0" width="560" bgcolor="#f6f6f6">
+                              <tbody>
+                                <tr>
+                                  <td width="10"></td>
+                                  <td height="10"></td>
+                                  <td width="10"></td>
+                                </tr>
+                                <tr>
+                                  <td width="10"></td>
+                                  <td>
+                                    <span style="font-family:Arial; font-size:16px; line-height:120%"><b>Change logs since last published version:</b></span>
+                                  </td>
+                                  <td width="10"></td>
+                                </tr>
+                                <tr>
+                                  <td width="10"></td>
+                                  <td height="10"></td>
+                                  <td width="10"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!-- Panel Content -->
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                        <tbody>
+                          <tr>
+                            <td width="10"></td>
+                            <td height="10"></td>
+                          </tr>
+                          <tr>
+                            <td width="10"></td>
+                            <td>
+                              <table align="left" border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                <tbody>
+                                  <tr>
+                                    <td>Editor 1</td>
+                                    <td align="right">Mar. 27, 2017</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font size="2" color="#696969">Replace banner background.</font></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td height="10"></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Editor 2</td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font size="2" color="#696969">Replace news text.</font></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="10"></td>
+                            <td height="20"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                        <tbody>
+                          <tr>
+                            <td width="10"></td>
+                            <td height="10"></td>
+                          </tr>
+                          <tr>
+                            <td width="10"></td>
+                            <td>
+                              <table align="left" border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                <tbody>
+                                  <tr>
+                                    <td>Editor 1</td>
+                                    <td align="right">Mar. 26, 2017</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font size="2" color="#696969">add new slidshow.</font></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td height="10"></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Editor 2</td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font size="2" color="#696969">initial draft.</font></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="10"></td>
+                            <td height="20"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td width="20"></td>
+                    <td>
+
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td width="20"></td>
+                    <td height="20"></td>
+                    <td width="20"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+             <!-- Button -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                <tbody>
+                  <tr>
+                    <td width="20%"></td>
+                    <td width="30%" align="center">
+                      <a href="#">Approve</a>
+                    </td>
+                    <td width="30%" align="center">
+                      <a href="#">Reject</a>
+                    </td>
+                    <td width="20%"></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td height="40"></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+              <!-- Images -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                <tbody>
+                  <tr>
+                    <td width="10%"></td>
+                    <td width="60%" align="center">
+                      <img class="block-center" src="http://ccms.gmxiao.docroot.davyin.net/sites/default/files/phantomjs/137.jpg" />
+                    </td>
+                    <td width="10%"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+             <!-- Button -->
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                <tbody>
+                  <tr>
+                    <td width="20%"></td>
+                    <td width="30%" align="center">
+                      <a href="#">Approve</a>
+                    </td>
+                    <td width="30%" align="center">
+                      <a href="#">Reject</a>
+                    </td>
+                    <td width="20%"></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td height="40"></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+              <!-- Footer -->
+              <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                  <tr>
+                    <td width="20"></td>
+                    <td valign="top" align="left" width="30%">
+                        <img src="http://tmp.xyhuang.dev.davyin.net/email/col-572_footer_logo.gif" border="0" alt="Citi" title="Citi">
+                    </td>
+                    <td align="right" style="font-size: 7.5pt; color:#333333; font-family:verdana,arial,sans-serif; text-decoration:none; text-align:right;">
+                        <span style="font-size: 7.5pt; color:#333333; font-family:verdana,arial,sans-serif; text-decoration:none; text-align:right;">Copyright © 2016 Citigroup</span>
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td height="20"></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </tr>
+  </tbody>
+</table>
