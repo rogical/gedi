@@ -11,7 +11,7 @@
               <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#0F68A4">
                 <tbody>
                   <tr>
-                    <td><img src="http://tmp.xyhuang.dev.davyin.net/email/col-572_header.png" style="width:100%; height:auto; display:block;" /></td>
+                    <td><img src="http://ccms.docroot.drupalagile.com/modules/custom/ccms/modules/ccms_mail/example/col-572_header.png" style="width:100%; height:auto; display:block;" /></td>
                   </tr>
                 </tbody>
               </table>
@@ -350,7 +350,7 @@
                   <tr>
                     <td width="20"></td>
                     <td valign="top" align="left" width="30%">
-                        <img src="http://tmp.xyhuang.dev.davyin.net/email/col-572_footer_logo.gif" border="0" alt="Citi" title="Citi">
+                        <img src="http://ccms.docroot.drupalagile.com/modules/custom/ccms/modules/ccms_mail/example/col-572_footer_logo.gif" border="0" alt="Citi" title="Citi">
                     </td>
                     <td align="right" style="font-size: 7.5pt; color:#333333; font-family:verdana,arial,sans-serif; text-decoration:none; text-align:right;">
                         <span style="font-size: 7.5pt; color:#333333; font-family:verdana,arial,sans-serif; text-decoration:none; text-align:right;">Copyright © 2016 Citigroup</span>
